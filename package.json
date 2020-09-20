@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "build": "NODE_ENV=production next build && next export",
+    "start": "node express_server.js"
   },
   "author": "",
   "license": "ISC",
