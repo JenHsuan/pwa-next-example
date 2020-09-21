@@ -1,6 +1,7 @@
 const path = require("path");
 const express = require("express");
 const app = express(); // create express app
+const port = process.env.PORT || 8080;
 
 app.use(express.static('out'));
 
@@ -9,6 +10,6 @@ app.get("/", (req, res) => {
 });
 
 // start express server on port 5000
-app.listen(5000, () => {
-  console.log("server started on port 5000");
+app.listen(port, function() {
+  console.log('Our app is running on http://localhost:' + port);
 });
