@@ -1,6 +1,10 @@
 const withOffline = require('next-offline')
 const path = require('path');
 
+const withCSS = require('@zeit/next-css')
+
+const withImages = require('next-images')
+
 const nextConfig = {
     generateInDevMode:false,
     dontAutoRegisterSw:true,
@@ -35,9 +39,9 @@ const nextConfig = {
         },
     }],
     webpack(config) {
-        console.log(config);
-        return config
+      console.log(config);
+      return config
     }
 }
 
-module.exports = withOffline(nextConfig)
+module.exports = withImages(withCSS(withOffline(nextConfig)))
