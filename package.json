@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "NODE_ENV=production next build && next export",
+    "build": "next build && next export",
     "start": "node express_server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "next": "^9.5.3",
     "next-offline": "^5.0.2",
     "react": "^16.13.1",

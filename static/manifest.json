@@ -1,19 +1,39 @@
 {
-    "short_name": "React App2",
-    "name": "Create React App Sample",
+    "short_name": "Next.js test",
+    "name": "Next.js test APP",
     "icons": [
       {
-        "src": "favicon.ico",
-        "sizes": "64x64 32x32 24x24 16x16",
-        "type": "image/x-icon"
+        "src": "logo-icon-48x48.png",
+        "type": "image/png",
+        "sizes": "48x48"
       },
       {
-        "src": "logo192.png",
+        "src": "logo-icon-96x96.png",
+        "type": "image/png",
+        "sizes": "96x96"
+      },
+      {
+        "src": "logo-icon-144x144.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      },
+      {
+        "src": "logo-icon-192x192.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "logo512.png",
+        "src": "logo-icon-256x256.png",
+        "type": "image/png",
+        "sizes": "256x256"
+      },
+      {
+        "src": "logo-icon-384x384.png",
+        "type": "image/png",
+        "sizes": "384x384"
+      },
+      {
+        "src": "logo-icon-512x512.png",
         "type": "image/png",
         "sizes": "512x512"
       }
