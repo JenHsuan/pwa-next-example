@@ -12,18 +12,21 @@ if (typeof importScripts === 'function') {
 
       // install
       self.addEventListener('install', event => {
-          console.log('installing…');
+          console.log('[Service Worker] Installing Service Worker...', event);
       });
       
       // activate
-      self.addEventListener('activate', event => {
-          console.log('now ready to handle fetches!');
+      self.addEventListener('activate', event => {          
+          console.log('[Service Worker] Activating Service Worker...', event);
       });
       
       // fetch
       self.addEventListener('fetch', event => {
-          console.log('now fetch!');
+        console.log('[Service Worker] Fetching something...', event);
+        event.respondWith(fetch(event.request));
       });
+
+     
 
       /* custom cache rules */
        workbox.routing.registerRoute(
