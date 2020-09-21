@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build && next export",
-    "start": "node express_server.js"
+    "start": "node express_server.js",
+    "heroku-postbuild": "next build && next export"
   },
   "author": "",
   "license": "ISC",
