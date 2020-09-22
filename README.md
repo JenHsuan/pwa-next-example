@@ -17,3 +17,12 @@
 
 #### worker strategies
 * [Workbox Strategies With Examples and Use Cases](https://medium.com/better-programming/workbox-strategies-with-examples-and-use-cases-ebb32f8cbe4d) 
+
+#### workbox
+* [[Day29] 自動化管理Service Worker(Part2)](https://ithelp.ithome.com.tw/articles/10227955)
+* [使用 Workbox](https://lavas-project.github.io/pwa-book/chapter05/5-workbox.html)
+
+#### debug
+* [如何在 iOS 裝置上使用 Chrome DevTools 和 Safari Web Inspector 遠端除錯？](https://cythilya.github.io/2018/07/17/weapons-of-jank-destruction/)
+* [Let's Debug a Node.js Application](https://blog.heroku.com/debug-node-applications)
+* [Debugging Next.js Applications](https://dev.to/spe_/debugging-next-js-applications-46b6)
