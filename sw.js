@@ -7,35 +7,33 @@ if (typeof importScripts === 'function') {
   
       /* injection point for manifest files.  */
       workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
-      
-      const precacheController = new workbox.precaching.PrecacheController();
-
-      // install
-      self.addEventListener('install', event => {
-          console.log('[Service Worker] Installing Service Worker...', event);
-      });
-      
-      // activate
-      self.addEventListener('activate', event => {          
-          console.log('[Service Worker] Activating Service Worker...', event);
-      });
-      
-      // fetch
-      self.addEventListener('fetch', event => {
-        console.log('[Service Worker] Fetching something...', event);
-        event.respondWith(fetch(event.request));
-      });
-
      
+      //fecth
+      var dataCacheName = 'Fetch'
+      self.addEventListener('fetch', event => {
+        if (!(event.request.url.indexOf('http') === 0)) {
+          return; 
+        }
 
-      /* custom cache rules */
-       workbox.routing.registerRoute(
-        new workbox.routing.NavigationRoute(
-          new workbox.strategies.NetworkFirst({
-            cacheName: 'PRODUCTION',
+        if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin'){
+          return;
+        }
+
+        console.log('[Service Worker] Fetching something...', event);
+        event.respondWith(
+          caches.match(event.request)
+          .then(cachedRes =>{
+              return cachedRes || fetch(event.request).then(res => {
+                caches.open(dataCacheName)
+                .then(cache => {
+                  cache.put(event.request, res.clone());
+                  return res;
+                })
+              })
           })
-        )
-      );
+        );
+      });
+
     } else {
       // console.log('Workbox could not be loaded. No Offline support');
     }

@@ -4,7 +4,9 @@ import '../css/App.css';
 
 const Cover = () => {
     return (
-        <img src={logo} className="App-logo" alt="logo" />
+        <div className="App">
+            <img src={logo} className="App-logo" alt="logo" />
+        </div>
     )
 }
 

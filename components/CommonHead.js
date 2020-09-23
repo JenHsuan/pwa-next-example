@@ -10,6 +10,16 @@ const CommonHead = () => {
 		    console.log("Service Worker Registered", registration);
 	    })
         //register('/service-worker.js', {scope: '/'}) 
+
+        fetch('https://httpbin.org/ip')
+        .then(function(res) {
+            console.log(res)
+            return res.json();
+        })
+        .then(function(res) {
+            console.log(res)
+        })
+
         return () => {
             navigator.serviceWorker.unregister();
             //unregister();  
