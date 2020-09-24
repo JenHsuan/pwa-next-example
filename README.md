@@ -1,5 +1,20 @@
 # Attach service workers to the Next.js application
 
+### Stacks
+* Next.js
+* next-offline
+* Workbox
+
+### Target abilities
+
+#### 1. Offline navigation
+* Pre-cache: 
+* Runtime cache
+#### 2. APP installer banner
+#### 3. Background sync 
+#### 4. Push notification
+
+
 ### References
 
 #### manifest.json
