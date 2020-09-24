@@ -5,6 +5,7 @@ import { register, unregister } from 'next-offline/runtime';
 
 const CommonHead = () => {
     useEffect(()=> {
+        /*
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('./service-worker.js')
             .then(function(registration) {
@@ -12,8 +13,8 @@ const CommonHead = () => {
             })
             .catch(err => console.log('Error!', err));    
         }
-        
-        //register('/service-worker.js', {scope: '/'}) 
+        */
+        register('/service-worker.js', {scope: '/'}) 
 /*
         fetch('https://httpbin.org/ip')
         .then(function(res) {
@@ -26,8 +27,8 @@ const CommonHead = () => {
         */
 
         return () => {
-            navigator.serviceWorker.unregister();
-            //unregister();  
+            //navigator.serviceWorker.unregister();
+            unregister();  
         };
     }, [])
     return (
