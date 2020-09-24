@@ -34,7 +34,7 @@ const CommonHead = () => {
     return (
         <Head>
             <title>Next PWA demo</title>
-            <link rel="manifest" href="/static/manifest.json" />
+            <link rel="manifest" href="/static/manifest.webmanifest" />
             <meta name = "apple-mobile-web-app-capable" content="yes" />
             <meta name = "apple-mobile-web-app-status-bar-style" content="black" />
             <meta name = "apple-mobile-web-app-title" content="Next PWA demo" />
