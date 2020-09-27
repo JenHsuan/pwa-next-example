@@ -46,7 +46,7 @@ if (typeof importScripts === 'function') {
                 ]
               })
           )
-          */
+          
       
       //For HTML
       workbox.routing.registerRoute(

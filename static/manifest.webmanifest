@@ -1,6 +1,6 @@
 {
-    "short_name": "Next.js test",
-    "name": "Next.js test APP",
+    "short_name": "Next.js PWA",
+    "name": "Next.js PWA test APP (20200927)",
     "icons": [
       {
         "src": "logo-icon-48x48.png",
