@@ -31,9 +31,14 @@ if (typeof importScripts === 'function') {
         }), 'GET' );
       
       //For JS/CSS
+      /*
+      Resources are requested from both the cache and the network in parallel. 
+      The strategy will respond with the cached version if available, otherwise wait for the network response. 
+      The cache is updated with the network response with each successful request
+      */
       workbox.routing.registerRoute(
             new RegExp('\.(?:js|css)$'),
-            new workbox.strategies.CacheFirst({
+            new workbox.strategies.StaleWhileRevalidate({
                 cacheName:'js-css-caches',
                 plugins: [
                   new workbox.cacheableResponse.CacheableResponsePlugin({
@@ -64,6 +69,13 @@ if (typeof importScripts === 'function') {
             ]
         }), 'GET' );
         
+        //Other resources
+        workbox.routing.registerRoute(
+            new RegExp('/_next/static/'),
+            new workbox.strategies.StaleWhileRevalidate({
+                cacheName: 'static-caches',  
+            })
+          );
        
       
     } else {
