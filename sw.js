@@ -7,19 +7,64 @@ if (typeof importScripts === 'function') {
       workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
 
       workbox.core.clientsClaim();
+      // transit the status from waiting to activate
       workbox.core.skipWaiting();
   
       workbox.precaching.cleanupOutdatedCaches();
 
       /* custom cache rules */
-       workbox.routing.registerRoute(
-        new workbox.routing.NavigationRoute(
-          new workbox.strategies.NetworkFirst({
-            cacheName: 'PRODUCTION',
-          })
-        )
-      );
 
+      //For images
+      workbox.routing.registerRoute(
+        new RegExp('.*\.(?:png|svg)'),
+        new workbox.strategies.CacheFirst ({
+            cacheName:'image-caches',
+            plugins: [
+                new workbox.cacheableResponse.CacheableResponsePlugin({
+                    statuses: [0, 200]
+                }),
+                new workbox.expiration.ExpirationPlugin({
+                    maxEntries: 20,
+                    maxAgeSeconds: 12 * 60 * 60
+                })
+            ]
+        }), 'GET' );
+      
+      //For JS/CSS
+      workbox.routing.registerRoute(
+            new RegExp('.*\.(?:js|css)'),
+            new workbox.strategies.CacheFirst({
+                cacheName:'js-css-caches',
+                plugins: [
+                  new workbox.cacheableResponse.CacheableResponsePlugin({
+                    statuses: [0, 200]
+                  }),
+                  new workbox.expiration.ExpirationPlugin({
+                    maxEntries: 20,
+                    maxAgeSeconds: 12 * 60 * 60
+                  })
+                ]
+              })
+          )
+          */
+      
+      //For HTML
+      workbox.routing.registerRoute(
+        new RegExp('/'),
+        new workbox.strategies.NetworkFirst ({
+            cacheName:'html-caches',
+            plugins: [
+                new workbox.cacheableResponse.CacheableResponsePlugin({
+                    statuses: [0, 200]
+                }),
+                new workbox.expiration.ExpirationPlugin({
+                    maxEntries: 20,
+                    maxAgeSeconds: 12 * 60 * 60
+                })
+            ]
+        }), 'GET' );
+        
+       
       
     } else {
       // console.log('Workbox could not be loaded. No Offline support');
