@@ -39,6 +39,7 @@ const CommonHead = () => {
             <meta name = "apple-mobile-web-app-status-bar-style" content="black" />
             <meta name = "apple-mobile-web-app-title" content="Next PWA demo" />
             <link rel="apple-touch-icon" href="/static/logo-icon-144x144.png" />
+            <link rel="apple-touch-startup-icon" href="/static/logo-icon-144x144.png" />
         </Head>
     )
 }
