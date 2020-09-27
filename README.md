@@ -37,7 +37,10 @@
 #### workbox
 * [[Day29] 自動化管理Service Worker(Part2)](https://ithelp.ithome.com.tw/articles/10227955)
 * [使用 Workbox](https://lavas-project.github.io/pwa-book/chapter05/5-workbox.html)
+<<<<<<< HEAD
 * [Workbox 之 ServiceWorker可以如此简单](https://www.webascii.cn/article/5ef2cb72071be112473165bc/)
+=======
+>>>>>>> eb6a39f... Add references
 
 #### debug
 * [如何在 iOS 裝置上使用 Chrome DevTools 和 Safari Web Inspector 遠端除錯？](https://cythilya.github.io/2018/07/17/weapons-of-jank-destruction/)
